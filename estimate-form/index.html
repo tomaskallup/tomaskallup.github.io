@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" type="text/css" href="style.css">
+<title>Estimate-form</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<div id="Estimate flow"><h1 id="Estimate flow" class="header"><a href="#Estimate flow">Estimate flow</a></h1></div>
+<div id="Estimate flow-To-do"><h2 id="To-do" class="header"><a href="#Estimate flow-To-do">To-do</a></h2></div>
+<ul>
+<li>
+Survey
+
+<ul>
+<li>
+Will need a way to have "default" values, which can be loaded on a step
+
+<ul>
+<li>
+These should not be same as values, because we want to change them in steps and we need to check if there is a default value
+
+<li>
+We should be able to change step title based on "default" values
+
+</ul>
+<li>
+Steps
+
+<ul>
+<li>
+Address input
+
+<ul>
+<li>
+Require exact address, should match redex <code>/.* (\d+\/)?\d+[a-zA-Z]?$/</code>
+
+<li>
+Use current address step from survey
+
+<li>
+Can switch to parcel input
+
+</ul>
+<li>
+Parcel input
+
+<ul>
+<li>
+Current parcel input from survey (cadastral area, parcel numbers)
+
+<li>
+Could be merged into 1 step with address, depends on implementation
+
+</ul>
+<li>
+Address validation
+
+<ul>
+<li>
+If we don't have addressId from previous step, fetch suggestions and use first one
+
+<li>
+Fetch address detail (atlas-api) and use it to display map &amp; info
+
+</ul>
+<li>
+Estate selection
+
+<ul>
+<li>
+Using address detail, check if address contains a building
+
+<ul>
+<li>
+If it does, let user select depending on if the building has units 
+
+<ul>
+<li>
+<a href="https://xd.adobe.com/view/ad98945d-92ca-42e7-b34e-cb537ab3c00b-f8cb/screen/d1b9f561-a7e9-44ce-a668-f26125f55940">with units</a>
+
+<li>
+<a href="https://xd.adobe.com/view/ad98945d-92ca-42e7-b34e-cb537ab3c00b-f8cb/screen/a42787cc-8d0d-490a-9917-a8d8ed7d7f9c">without units</a>
+
+</ul>
+<li>
+If it doesn't, show <a href="https://xd.adobe.com/view/ad98945d-92ca-42e7-b34e-cb537ab3c00b-f8cb/screen/2d82f9bd-2f02-4b7c-97b0-4d0c2ddc65cb">no building found</a>
+
+</ul>
+</ul>
+<li>
+Unit selection step
+
+<ul>
+<li>
+Only visible if building has address &amp; <code>estate</code> was selected as <code>unit</code>
+
+<li>
+Same as atlas unit search, with these changes
+
+<ul>
+<li>
+Unit can be selected and will fill <code>unitId</code> 
+
+<li>
+Special option "unit not listed", will continue with no <code>unitId</code>
+
+</ul>
+</ul>
+<li>
+
+</ul>
+</ul>
+</ul>
+
+</body>
+</html>
